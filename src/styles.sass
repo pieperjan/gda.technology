@@ -1,1 +1,189 @@
-/* You can add global styles to this file, and also import other style files */
+// ! Import
+@import assets/sass/_var
+@import assets/sass/_mixins
+
+body,
+html 
+    padding: 0
+    margin: 0
+    display: block
+    font: 
+        size: $default-fontsize
+        family: $default-fontfamily
+        weight: 500
+    line-height: 1.35
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+a
+    margin: 0 0 1rem
+    padding: 0
+
+// ! Default Styles
+strong 
+    font-weight: normal
+
+h1
+    font-size: 3.2rem
+    font-weight: 500
+    @include breakpoint(min,tablet)
+        font-size: 5rem
+    @include breakpoint(min,laptop)
+        font-size: 6rem
+    @include breakpoint(min,desktop)
+        font-size: 7rem
+
+h2
+    font-size: 2.8rem
+    font-weight: 500
+    @include breakpoint(min,tablet)
+        font-size: 4rem
+    @include breakpoint(min,laptop)
+        font-size: 5rem
+    @include breakpoint(min,desktop)
+        font-size: 6rem
+
+h3
+    font-size: 2.4rem
+    font-weight: 500
+    @include breakpoint(min,tablet)
+        font-size: 3rem
+    @include breakpoint(min,desktop)
+        font-size: 4rem
+
+h4
+    font-size: 2.1rem
+    font-weight: 500
+    @include breakpoint(min,laptop)
+        font-size: 3rem
+
+h5
+    font-size: 1.8rem
+    font-weight: 500
+    @include breakpoint(min,laptop)
+        font-size: 2.1rem
+
+h6
+    font-size: 1.8rem
+    font-weight: 700
+
+a
+    font-size: 1.8rem
+
+
+// * Default Classes
+.gda-bg-light
+    background-color: $bg-light
+    color: $black
+
+.gda-bg-dark
+    background-color: $bg-dark
+    color: $white
+
+.blue
+    color: $blue
+
+.yellow
+    color: $yellow
+
+.gda-no-padding
+    padding: 0 !important
+
+.gda-no-vertical-padding
+    padding-top: 0 !important
+    padding-bottom: 0 !important
+
+.gda-no-horizontal-padding
+    padding-left: 0 !important
+    padding-right: 0 !important
+
+.gda-no-margin
+    margin: 0 !important
+
+.gda-no-vertical-margin
+    margin-top: 0 !important
+    margin-bottom: 0 !important
+
+.gda-no-horizontal-margin
+    margin-left: 0 !important
+    margin-right: 0 !important
+
+
+.gda-container 
+    width: 85vw
+    margin-left: auto
+    margin-right: auto
+    .gda-row
+        display: flex
+        flex-direction: row
+        &.gda-row-space-between
+            justify-content: space-between
+        .gda-col
+            padding: $default-padding-horizontal $default-padding-vertical
+            display: flex
+            flex-direction: column
+            width: 100%
+            &.gda-col-row
+                flex-direction: row
+            &.gda-col-center
+                align-items: center
+            &.gda-col-top
+                align-items: flex-start
+            &.gda-col-bottom
+                align-items: flex-end
+
+
+.gda-default-cell-style 
+    padding: $default-padding-horizontal  
+
+.flex-row 
+    flex-direction: row
+    align-items: flex-start
+    justify-content: flex-start
+    &.space-between
+        justify-content: space-between
+
+.flex-column
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
+    &.space-between
+        align-items: space-between
+
+.fixed-full-size
+    position: fixed
+    top: 0
+    left: 0
+    display: block
+    width: 100%
+    height: 100%
+    background: white   
+
+.default-link
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    font-size: 1.8rem
+    color: $blue
+    text-decoration: none
+    cursor: pointer
+    svg 
+        margin-left: 7px
+        path
+            fill: $blue
+
+
+.gda-grid 
+    display: grid !important
+    grid-template-columns: 1fr 1fr
+    grid-template-row: 1fr 1fr
+    gap: 50px
+    &.gda-grid-2-column
+    &.gda-grid-4-column

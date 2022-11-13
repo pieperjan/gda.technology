@@ -1,0 +1,82 @@
+.gda-sidenav {
+  background-color: #ffffff;
+}
+
+.gda-navigation {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 1020;
+}
+
+.gda-navigation .gda-navi .gda-navi-link {
+  padding: 0 1rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.gda-navigation .gda-navi .gda-navi-link:hover, .gda-navigation .gda-navi .gda-navi-link:focus, .gda-navigation .gda-navi .gda-navi-link:focus-within {
+  background: #226f9e;
+  background: linear-gradient(200deg, #226f9e 0%, #001624 100%);
+  color: #ffffff;
+}
+
+.gda-navigation .gda-sidenav-toggler {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.gda-navigation .gda-logo-link {
+  max-height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.gda-navigation .gda-logo-link .gda-logo {
+  width: 220px;
+}
+
+.gda-sidenav {
+  left: -100vw;
+}
+
+.gda-contact {
+  right: -100vw;
+}
+
+.gda-contact,
+.gda-sidenav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+}
+/*# sourceMappingURL=app.component.css.map */

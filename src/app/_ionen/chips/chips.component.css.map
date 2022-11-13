@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAKA,AACI,eADW,CACX,SAAS,CAAC;EACN,OAAO,EAAE,gBAAgB;EACzB,aAAa,EAAE,OAAO;EACtB,YAAY,EAAE,OAAO;EACrB,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,IAAI;EACrB,KAAK,ECVL,OAAO;EDWP,gBAAgB,ECTf,OAAO;EDUR,aAAa,EAAE,QAAQ;EEV3B,UAAU,EAYU,GAAG,CDFR,KAAK,CACC,WAAW;CDAN;;AAV9B,AEYI,eFZW,CACX,SAAS,AEWR,MAAM,EFZX,eAAe,CACX,SAAS,AEYR,MAAM,EFbX,eAAe,CACX,SAAS,AEaR,aAAa,CAAC;EACX,gBAAgB,EAAE,OAAoB;CAAG",
+    "sources": [
+        "chips.component.sass",
+        "../../../assets/sass/_var.sass",
+        "../../../assets/sass/_mixins.sass",
+        "../../../assets/sass/_var.sass"
+    ],
+    "names": [],
+    "file": "chips.component.css"
+}

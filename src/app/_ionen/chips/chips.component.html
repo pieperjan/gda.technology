@@ -1,0 +1,8 @@
+<mat-chip-list
+  class="gda-wrap-chips">
+  <a
+    class="gda-chip"
+    *ngFor="let navitem of navigation" routerLink="{{navitem.link}}">
+    {{navitem.name}}
+  </a>
+</mat-chip-list>

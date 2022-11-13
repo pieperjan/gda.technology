@@ -1,0 +1,56 @@
+// ! Custom Styling Navigation/AppComponent
+@import ../assets/sass/_var
+@import ../assets/sass/_mixins
+
+.gda-sidenav 
+    background-color: $white
+
+.gda-main
+    z-index: 0
+
+.gda-navigation
+    position: fixed
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 1020
+    .gda-navi 
+        .gda-navi-link 
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            text-align: center
+            text-decoration: none
+            color: $black
+            @include navihover
+                
+    .gda-sidenav-toggler
+        padding: 0
+        margin: 0
+        border: 0
+        background: 0
+        border-radius: 0
+        cursor: pointer
+    .gda-logo-link
+        max-height: 100px
+        display: flex
+        justify-content: center
+        align-items: center
+        overflow: hidden
+        .gda-logo
+            width: 220px
+
+.gda-sidenav
+    left: -100vw
+    
+.gda-contact
+    right: -100vw
+
+.gda-contact,
+.gda-sidenav
+    position: fixed
+    top: 0
+    bottom: 0
+    width: 100vw
+    height: 100vh

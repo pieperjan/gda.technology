@@ -1,0 +1,17 @@
+.gda-wrap-chips .gda-chip {
+  padding: 0.33rem 0.722rem;
+  margin-bottom: 0.45rem;
+  margin-right: 0.45rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000000;
+  background-color: #FFD37E;
+  border-radius: 0.722rem;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.gda-wrap-chips .gda-chip:hover, .gda-wrap-chips .gda-chip:focus, .gda-wrap-chips .gda-chip:focus-within {
+  background-color: #ffc24b;
+}
+/*# sourceMappingURL=chips.component.css.map */

@@ -1,0 +1,116 @@
+// ! Mixins
+@import ../sass/_var
+
+@mixin transition($a)
+    transition: $a $default-duration $default-timingfunction
+
+@mixin navihover
+    @include transition(all)
+    &:hover,
+    &:focus,
+    &:focus-within
+        background: rgb(34,111,158)
+        background: linear-gradient(200deg, rgba(34,111,158,1) 0%, rgba(0,22,36,1) 100%)
+        color: $white
+
+@mixin chipshover
+    @include transition(all)
+    &:hover,
+    &:focus,
+    &:focus-within
+        background-color: darken($yellow, 10%)
+
+
+// ! Mixins
+@mixin breakpoint($condition,$breakpoint)
+    // ! Breakpoints Max
+    $mobile-max: 575.98px
+    $mobile-extra-max: 767.98px
+    $tablet-max: 1024.98px
+    $tablet-extra-max: 1200.98px
+    $laptop-max: 1450.98px
+    $laptop-extra-max: 1920.98px
+    $desktop-max: 2400.98px
+    // ! Breakpoints Min
+    $mobile-min: 576px
+    $mobile-extra-min: 768px
+    $tablet-min: 1025px
+    $tablet-extra-min: 1201px
+    $laptop-min: 1451px
+    $laptop-extra-min: 1921px
+    $desktop-min: 2401px
+
+    @if $condition == max
+        $i: max-width
+        @if $breakpoint == mobile
+            $d: $mobile-max
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == mobile-extra
+            $d: $mobile-extra-max
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == tablet
+            $d: $tablet-max
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == tablet-extra
+            $d: $tablet-extra-max
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == laptop
+            $d: $laptop-max
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == laptop-extra
+            $d: $laptop-extra-max
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == desktop 
+            $d: $desktop-max
+            @media ($i: $d) 
+                @content
+    @else if $condition == min
+        $i: min-width
+        @if $breakpoint == mobile
+            $d: $mobile-min
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == mobile-extra
+            $d: $mobile-extra-min
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == tablet
+            $d: $tablet-min
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == tablet-extra
+            $d: $tablet-extra-min
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == laptop
+            $d: $laptop-min
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == laptop-extra
+            $d: $laptop-extra-min
+            @media ($i: $d) 
+                @content
+        @else if $breakpoint == desktop 
+            $d: $desktop-min
+            @media ($i: $d) 
+                @content
+    
+
+
+
+@mixin disable
+    display: none !important
+    opacity: 0 !important
+    visibility: hidden !important
+
+
+@mixin defaultshadow 
+    box-shadow: -2px 4px 16px -9px rgba(0,0,0,1)
+    -webkit-box-shadow: -2px 4px 16px -9px rgba(0,0,0,1)
+    -moz-box-shadow: -2px 4px 16px -9px rgba(0,0,0,1)
