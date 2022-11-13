@@ -3,11 +3,11 @@
 @import assets/sass/_mixins
 
 body,
-html 
+html
     padding: 0
     margin: 0
     display: block
-    font: 
+    font:
         size: $default-fontsize
         family: $default-fontfamily
         weight: 500
@@ -26,7 +26,7 @@ a
     padding: 0
 
 // ! Default Styles
-strong 
+strong
     font-weight: normal
 
 h1
@@ -115,8 +115,9 @@ a
     margin-right: 0 !important
 
 
-.gda-container 
+.gda-container
     width: 85vw
+    max-width: 1800px
     margin-left: auto
     margin-right: auto
     .gda-row
@@ -139,10 +140,10 @@ a
                 align-items: flex-end
 
 
-.gda-default-cell-style 
-    padding: $default-padding-horizontal  
+.gda-default-cell-style
+    padding: $default-padding-horizontal
 
-.flex-row 
+.flex-row
     flex-direction: row
     align-items: flex-start
     justify-content: flex-start
@@ -163,7 +164,7 @@ a
     display: block
     width: 100%
     height: 100%
-    background: white   
+    background: white
 
 .default-link
     display: flex
@@ -174,13 +175,13 @@ a
     color: $blue
     text-decoration: none
     cursor: pointer
-    svg 
+    svg
         margin-left: 7px
         path
             fill: $blue
 
 
-.gda-grid 
+.gda-grid
     display: grid !important
     grid-template-columns: 1fr 1fr
     grid-template-row: 1fr 1fr
