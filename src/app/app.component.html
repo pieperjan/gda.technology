@@ -7,84 +7,89 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<!-- * Sidenav * -->
-<div class="gda-sidenav gda-container">
-    <div class="gda-row">
-        <div class="gda-col gda-no-padding gda-no-margin">
-            {{isShowDiv}}
-            <app-sidenav></app-sidenav>
-        </div>
-    </div>
-</div>
-
-<!-- * Sidenav Ende * -->
 
 <!-- * Kontakt * -->
 <div class="gda-contact gda-container">
-    <div class="gda-row">
-        <div class="gda-col gda-no-padding gda-no-margin">
-            <app-contact></app-contact>
-        </div>
+  <div class="gda-row">
+    <div class="gda-col gda-no-padding gda-no-margin">
+      <app-contact></app-contact>
     </div>
+  </div>
 </div>
 <!-- * Kontakt Ende * -->
 
 <!-- Basic Container -->
-<div class="gda-navigation gda-container">
+<div class="gda-navigation">
+  <div class="gda-container">
     <div class="gda-row gda-row-space-between">
-        <div class="gda-col gda-col-row gda-col-center gda-no-padding gda-no-margin">
-            <button class="gda-sidenav-toggler" data-open="false" (click)="toggleSidenav()">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"/></svg>
-            </button>
-            <a class="gda-logo-link" routerLink="/">
-                <img class="gda-logo" src="../assets/logo/gda_design_short.png" title="Logo German Digitall Allstars" />
-            </a>
-        </div>
-        
-        <div class="gda-col gda-col-row gda-navi gda-col-center gda-no-padding gda-no-margin">
-            <a class="gda-navi-link" routerLink="mission">Mission</a>
-            <a class="gda-navi-link" routerLink="vision">Vision</a>
-            <a class="gda-navi-link" routerLink="about">Über Uns</a>
-            <a class="gda-navi-link" routerLink="about">Arbeiten</a>
-            <a class="gda-navi-link" routerLink="formate">Formate</a>
-        </div>
+      <div class="gda-col gda-col-row gda-col-center gda-no-padding gda-no-margin">
+        <!-- * Sidenav * -->
+        <input type="checkbox" id="burger-menu-toggler" name="burger-menu-toggler">
+        <label for="burger-menu-toggler" class="burger-menu hide-on-desktop show-on-laptop">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+            <path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"/>
+          </svg>
+        </label>
+        <app-sidenav class="gda-sidenav"></app-sidenav>
 
-        <div class="gda-col gda-col-row gda-col-center gda-no-padding gda-no-margin">
-            <app-chips></app-chips>
-        </div>
+        <!-- * Sidenav Ende * -->
+        <a class="gda-logo-link" routerLink="/">
+          <div class="gda-logo">
+            <span class="yellow">G<span class="hide-on-tablet">erman</span></span>
+            <span class="blue">D<span class="hide-on-tablet">igital</span>
+            </span>
+            <span>A<span class="hide-on-mobile">llstars</span></span>.
+          </div>
+          <small class="gda-logo-slogan">Webagentur</small>
+        </a>
+      </div>
+
+      <div class="gda-col gda-col-row gda-navi gda-col-center gda-no-padding gda-no-margin hide-on-mobile">
+        <a class="gda-navi-link" routerLink="mission">Mission</a>
+        <a class="gda-navi-link" routerLink="vision">Vision</a>
+        <a class="gda-navi-link" routerLink="about">Über Uns</a>
+        <a class="gda-navi-link" routerLink="about">Arbeiten</a>
+        <a class="gda-navi-link" routerLink="formate">Formate</a>
+      </div>
+
+      <div class="gda-col gda-col-row gda-col-center gda-no-padding gda-no-margin">
+        <app-chips></app-chips>
+      </div>
     </div>
-</div> 
+  </div>
+
+</div>
 
 <div class="gda-main gda-container">
-    <div class="gda-row gda-row-space-between">
-        <div class="gda-col gda-col-center gda-no-margin gda-no-padding">
-            <router-outlet></router-outlet>
-        </div>
+  <div class="gda-row gda-row-space-between">
+    <div class="gda-col gda-col-center gda-no-margin gda-no-padding">
+      <router-outlet></router-outlet>
     </div>
+  </div>
 </div>
-    
+
 
 <footer class="gda-footer gda-container">
-    <div class="gda-row gda-row-space-between">
-        <div class="gda-col gda-col-center">
-            <h5 class="footer-contact">
-                Wir sind immer offen für neue Gespräche. Sagen Sie gerne hi
-            </h5>
-            <a href="mailto:hi@gda.technology">hi@gda.technology</a>
-            <div class="footer-service">
-                <div class="footer-service-logo"></div>
-                <div class="footer-service-service">
-                    <hr>
-                    <ul class="service-navigation">
-                        <li class="service-navigation-item">
-                            <a class="navigation-item-link">Impressum</a>
-                            <a class="navigation-item-link">Datenschutz</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+  <div class="gda-row gda-row-space-between">
+    <div class="gda-col gda-col-center">
+      <h5 class="footer-contact">
+        Wir sind immer offen für neue Gespräche. Sagen Sie gerne hi
+      </h5>
+      <a href="mailto:hi@gda.technology">hi@gda.technology</a>
+      <div class="footer-service">
+        <div class="footer-service-logo"></div>
+        <div class="footer-service-service">
+          <hr>
+          <ul class="service-navigation">
+            <li class="service-navigation-item">
+              <a class="navigation-item-link">Impressum</a>
+              <a class="navigation-item-link">Datenschutz</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
 </footer>
 
 

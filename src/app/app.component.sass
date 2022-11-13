@@ -2,21 +2,32 @@
 @import ../assets/sass/_var
 @import ../assets/sass/_mixins
 
-.gda-sidenav 
-    background-color: $white
-
 .gda-main
-    z-index: 0
+  z-index: 0
 
 .gda-navigation
-    position: fixed
-    top: 0
-    left: 50%
-    transform: translateX(-50%)
-    z-index: 1020
-    .gda-navi 
-        .gda-navi-link 
-            height: 100%
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  background-color: $white
+  border-bottom: 1px solid $outline-color
+  @include defaultshadow
+  z-index: 1020
+
+  .gda-container
+    .gda-row
+      .gda-col
+        width: inherit
+
+        #burger-menu-toggler
+          &:checked ~ app-sidenav
+            left: 0
+            border: 1px solid red
+
+        &.gda-navi
+          .gda-navi-link
+            padding: 20px 10px
             display: flex
             justify-content: center
             align-items: center
@@ -24,33 +35,52 @@
             text-decoration: none
             color: $black
             @include navihover
-                
-    .gda-sidenav-toggler
-        padding: 0
-        margin: 0
-        border: 0
-        background: 0
-        border-radius: 0
-        cursor: pointer
-    .gda-logo-link
-        max-height: 100px
-        display: flex
-        justify-content: center
-        align-items: center
-        overflow: hidden
-        .gda-logo
-            width: 220px
 
-.gda-sidenav
-    left: -100vw
-    
+        .gda-sidenav-toggler
+          padding: 0
+          margin: 0
+          border: 0
+          background: 0
+          border-radius: 0
+          cursor: pointer
+
+        .gda-logo-link
+          padding: 15px 0
+          max-height: 100px
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: flex-start
+          overflow: hidden
+          text-decoration: none
+
+          .gda-logo
+            font-weight: bold
+            font-size: 2rem
+            line-height: 1
+            color: $black
+
+          small
+            color: $black
+            line-height: 1
+
+
 .gda-contact
-    right: -100vw
+  right: -100vw
 
-.gda-contact,
+.gda-contact
+  position: fixed
+  top: 0
+  bottom: 0
+  width: 100vw
+  height: 100vh
+
 .gda-sidenav
-    position: fixed
-    top: 0
-    bottom: 0
-    width: 100vw
-    height: 100vh
+  position: fixed
+  top: 0
+  bottom: 0
+  left: -100vw
+  width: 100vw
+  height: 100vh
+  background-color: $white
+  @include transition(left)

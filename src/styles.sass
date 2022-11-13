@@ -22,8 +22,18 @@ h6,
 p,
 li,
 a
-    margin: 0 0 1rem
+    margin: 0
     padding: 0
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li
+  margin-bottom: 1rem
 
 // ! Default Styles
 strong
@@ -188,3 +198,30 @@ a
     gap: 50px
     &.gda-grid-2-column
     &.gda-grid-4-column
+
+
+.hide-on-desktop
+  @include breakpoint(min, laptop)
+    @include disable
+.hide-on-laptop
+  @include breakpoint(max, laptop)
+    @include disable
+.hide-on-tablet
+  @include breakpoint(max, tablet-extra)
+    @include disable
+.hide-on-mobile
+  @include breakpoint(max, mobile-extra)
+    @include disable
+
+.show-on-desktop
+  @include breakpoint(max, laptop)
+    @include disable
+.show-on-laptop
+  @include breakpoint(min, laptop)
+    @include disable
+.show-on-tablet
+  @include breakpoint(min, tablet-extra)
+    @include disable
+.show-on-mobile
+  @include breakpoint(min, mobile-extra)
+    @include disable
