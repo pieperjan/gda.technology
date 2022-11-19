@@ -84,7 +84,9 @@ h6
     font-weight: 700
 
 a
-    font-size: 1.8rem
+  font-size: 1.8rem
+  text-decoration: none !important
+  color: $blue
 
 // ! Default Hover
 a:not(.gda-navi-link):not(.gda-logo-link)
@@ -164,13 +166,18 @@ a:not(.gda-navi-link):not(.gda-logo-link)
     .gda-row,
     .gda-column
         display: flex
+        &.gda-bg-light
+          .gda-col
+            @include breakpoint(max, mobile-extra)
+              padding-left: $default-padding-vertical
+              padding-right: $default-padding-vertical
         &.gda-row-space-between
             justify-content: space-between
         .gda-col
             padding: $default-padding-vertical $default-padding-horizontal
             @include breakpoint(max, mobile-extra)
-              padding-top: $default-padding-horizontal
-              padding-bottom: $default-padding-horizontal
+              padding-left: 0
+              padding-right: 0
             display: flex
             flex-direction: column
             width: 100%
@@ -182,7 +189,6 @@ a:not(.gda-navi-link):not(.gda-logo-link)
                 align-items: flex-start
             &.gda-col-bottom
                 align-items: flex-end
-
 
 // ! Default Padding
 .gda-default-cell-style
@@ -204,6 +210,9 @@ a:not(.gda-navi-link):not(.gda-logo-link)
     padding: $default-padding-vertical $default-padding-horizontal
 
 // ! Default Flex Config
+.display-flex
+  display: flex
+
 .flex-row
     flex-direction: row
     align-items: flex-start
@@ -217,6 +226,9 @@ a:not(.gda-navi-link):not(.gda-logo-link)
     justify-content: flex-start
     &.space-between
         align-items: space-between
+
+.flex-justify-center
+  justify-content: center
 
 .fixed-full-size
     position: fixed
@@ -255,7 +267,6 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 
 
 .hide-on-desktop
-  @include breakpoint(min, laptop)
     @include disable
 .hide-on-laptop
   @include breakpoint(max, laptop)
@@ -269,16 +280,16 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 
 .show-on-desktop
   @include breakpoint(max, laptop)
-    @include disable
+    @include activate
 .show-on-laptop
-  @include breakpoint(min, laptop)
-    @include disable
+  @include breakpoint(max, laptop)
+    @include activate
 .show-on-tablet
-  @include breakpoint(min, tablet-extra)
-    @include disable
+  @include breakpoint(max, tablet-extra)
+    @include activate
 .show-on-mobile
-  @include breakpoint(min, mobile-extra)
-    @include disable
+  @include breakpoint(max, mobile-extra)
+    @include activate
 
 
 // ! Tags

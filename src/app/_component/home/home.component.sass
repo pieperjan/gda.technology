@@ -25,24 +25,59 @@
     width: 100%
     height: 100%
     @include breakpoint(max, laptop)
-      background-image: url('../../../assets/images/home/b_laptop_1484438981_komp.webp')
+      background-image: url('../../../assets/images/home/b_laptop_heroimage_1484438981_komp.webp')
     @include breakpoint(max, tablet-extra)
-      background-image: url('../../../assets/images/home/c_tablet_1484438981_komp.webp')
+      background-image: url('../../../assets/images/home/c_tablet_heroimage_1484438981_komp.webp')
     @include breakpoint(max, mobile-extra)
-      background-image: url('../../../assets/images/home/d_mobile_1484438981_komp.webp')
-    background-image: url('../../../assets/images/home/a_desktop_1484438981_komp.webp')
+      background-image: url('../../../assets/images/home/d_mobile_heroimage_1484438981_komp.webp')
+    background-image: url('../../../assets/images/home/a_desktop_heroimage_1484438981_komp.webp')
     background-repeat: no-repeat
     background-size: cover
     background-position: center
 
 
+// ! Services
+#services
+   @include breakpoint(max, mobile-extra)
+      flex-direction: column-reverse
+   .gda-col
+    &.service-graphic-content
+
+    &.service-graphic
+      padding: 5% 0 0 10%
+      @include breakpoint(max, tablet-extra)
+        padding-left: 0
+
+// ! Mission
+#mission,
+#vision,
+#burning
+  h3
+    font:
+      size: 5.2rem
+    @include breakpoint(max, laptop)
+      font:
+        size: 4.2rem
+    @include breakpoint(max, tablet)
+      font:
+        size: 3.2rem
+    @include breakpoint(max, mobile)
+      font:
+        size: 2.1rem
+
+
+// ! Teamimage
+#teamimage
+  picture
+    img
+      width: 100%
 
 // ! Facts About
 #factsabout
 
 .gda-facts-about
   font:
-    size: 5.6rem
+    size: 5.2rem
   @include breakpoint(max, laptop)
     font:
       size: 4.2rem
