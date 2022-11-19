@@ -12,6 +12,7 @@ html
         family: $default-fontfamily
         weight: 500
     line-height: 1.35
+    scroll-behavior: smooth
 
 h1,
 h2,
@@ -230,6 +231,9 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 .flex-justify-center
   justify-content: center
 
+.align-items-center
+  align-items: center
+
 .fixed-full-size
     position: fixed
     top: 0
@@ -306,3 +310,9 @@ a:not(.gda-navi-link):not(.gda-logo-link)
   border: 1px solid $black
 
 
+
+// !  Divider
+.divider-mobile
+  @include breakpoint(max, mobile-extra)
+    display: block
+    height: 100px

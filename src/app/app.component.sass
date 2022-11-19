@@ -138,6 +138,11 @@ footer.gda-footer
     margin-top: $default-padding-vertical
     @include breakpoint(max, mobile-extra)
       margin-top: $default-padding-horizontal
+    @include breakpoint(max, mobile)
+      display: flex
+      flex-direction: column
+      align-items: center
+
     width: 100%
     .footer-service-logo
       margin-right: 5rem
