@@ -158,8 +158,12 @@ a:not(.gda-navi-link):not(.gda-logo-link)
     margin-left: auto
     margin-right: auto
     .gda-row
+      flex-direction: row
+    .gda-column
+      flex-direction: column
+    .gda-row,
+    .gda-column
         display: flex
-        flex-direction: row
         &.gda-row-space-between
             justify-content: space-between
         .gda-col

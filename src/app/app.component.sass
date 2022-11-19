@@ -86,3 +86,45 @@
   @include transition(left)
   @include defaultshadow
   z-index: -1
+
+
+
+  // ! Footer
+footer.gda-footer
+  .gda-col,
+  .gda-row
+    padding: 0 !important
+  .footer-contact
+    padding-bottom: 30px
+    max-width: 600px
+    font:
+      size: 5rem
+      weight: bold
+  a.link-mail
+    position: relative
+    padding: 20px 40px
+    font:
+      size: 5rem
+      weight: bold
+    background-color: $yellow
+    color: $black
+    &:before
+      content: ''
+      position: absolute
+      top: -15px
+      left: 40px
+      display: block
+      width: 50px
+      height: 50px
+      background-color: $yellow
+      transform: rotate(30deg)
+      z-index: -1
+  .footer-service
+    margin-top: 5%
+    width: 100%
+    .footer-service-logo
+    .footer-service-service
+      .service-navigation
+        .service-navigation-item
+          .navigation-item-link
+
