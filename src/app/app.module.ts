@@ -17,6 +17,8 @@ import { ContactComponent } from './_atome/contact/contact.component';
 import { SidenavComponent } from './_atome/sidenav/sidenav.component';
 import { HomeComponent } from './_component/home/home.component';
 import { FormateComponent } from './_atome/formate/formate.component';
+import { ImpressumComponent } from './_component/impressum/impressum.component';
+import { DatenschutzComponent } from './_component/datenschutz/datenschutz.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { FormateComponent } from './_atome/formate/formate.component';
     SidenavComponent,
     HomeComponent,
     FormateComponent,
+    ImpressumComponent,
+    DatenschutzComponent,
 
   ],
   imports: [
