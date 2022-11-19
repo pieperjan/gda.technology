@@ -36,9 +36,7 @@ p,
 li
   margin-bottom: 1rem
 
-// ! Default Styles
-strong
-    font-weight: normal
+
 
 h1
     font-size: 3.2rem
@@ -90,6 +88,10 @@ a
   color: $blue
   cursor: pointer
 
+p
+  margin-bottom: 3rem
+  font-size: 1.8rem
+
 // ! Default Hover
 a:not(.gda-navi-link):not(.gda-logo-link)
   @include transition(all)
@@ -109,10 +111,12 @@ a:not(.gda-navi-link):not(.gda-logo-link)
     color: $white
 
 .blue
-    color: $blue
+  color: $blue
+  font-weight: normal
 
 .yellow
     color: $yellow
+    font-weight: normal
 
 .gda-no-padding
     padding: 0 !important
@@ -232,6 +236,9 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 .flex-justify-center
   justify-content: center
 
+.flex-justify-spacebetween
+  justify-content: space-between
+
 .align-items-center
   align-items: center
 
@@ -245,7 +252,8 @@ a:not(.gda-navi-link):not(.gda-logo-link)
     background: white
 
 .default-link
-    display: flex
+    margin-right: 10px
+    display: inline-flex
     flex-direction: row
     justify-content: flex-start
     align-items: center
@@ -313,6 +321,10 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 
 
 // !  Divider
+.divider
+  display: block
+  height: 100px
+
 .divider-mobile
   @include breakpoint(max, mobile-extra)
     display: block
