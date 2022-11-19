@@ -86,6 +86,14 @@ h6
 a
     font-size: 1.8rem
 
+// ! Default Hover
+a:not(.gda-navi-link):not(.gda-logo-link)
+  @include transition(all)
+  &:hover,
+  &:focus,
+  &:focus-within
+    transform: translateX(4px)
+
 
 // * Default Classes
 .gda-bg-light
@@ -124,10 +132,29 @@ a
     margin-left: 0 !important
     margin-right: 0 !important
 
+.gda-half-width-right
+  > .gda-col
+    padding-left: 50% !important
+    @include breakpoint(max, tablet)
+      padding-left: 40% !important
+    @include breakpoint(max, tablet)
+      padding-left: 30% !important
+    @include breakpoint(max, tablet)
+      padding-left: $default-padding-horizontal !important
+
+.gda-half-width-left
+  > .gda-col
+    padding-right: 50% !important
+    @include breakpoint(max, laptop)
+      padding-right: 40% !important
+    @include breakpoint(max, tablet)
+      padding-right: 30% !important
+    @include breakpoint(max, tablet)
+      padding-right: $default-padding-horizontal !important
 
 .gda-container
-    width: 85vw
-    max-width: 1800px
+    width: $default-container
+    max-width: $max-width
     margin-left: auto
     margin-right: auto
     .gda-row
@@ -136,7 +163,10 @@ a
         &.gda-row-space-between
             justify-content: space-between
         .gda-col
-            padding: $default-padding-horizontal $default-padding-vertical
+            padding: $default-padding-vertical $default-padding-horizontal
+            @include breakpoint(max, mobile-extra)
+              padding-top: $default-padding-horizontal
+              padding-bottom: $default-padding-horizontal
             display: flex
             flex-direction: column
             width: 100%
@@ -150,9 +180,26 @@ a
                 align-items: flex-end
 
 
+// ! Default Padding
 .gda-default-cell-style
-    padding: $default-padding-horizontal
+    padding: $default-padding-vertical $default-padding-horizontal
+    @include breakpoint(max, mobile-extra)
+      padding-top: $default-padding-horizontal
+      padding-bottom: $default-padding-horizontal
 
+.gda-laptop-default-cell-style
+  @include breakpoint(max, laptop)
+    padding: $default-padding-vertical $default-padding-horizontal
+
+.gda-tablet-default-cell-style
+  @include breakpoint(max, tablet)
+    padding: $default-padding-vertical $default-padding-horizontal
+
+.gda-mobile-default-cell-style
+  @include breakpoint(max, mobile)
+    padding: $default-padding-vertical $default-padding-horizontal
+
+// ! Default Flex Config
 .flex-row
     flex-direction: row
     align-items: flex-start
@@ -196,6 +243,9 @@ a
     grid-template-columns: 1fr 1fr
     grid-template-row: 1fr 1fr
     gap: 50px
+    @include breakpoint(max, mobile-extra)
+      grid-template-columns: 1fr
+      grid-template-row: 1fr
     &.gda-grid-2-column
     &.gda-grid-4-column
 
@@ -225,3 +275,19 @@ a
 .show-on-mobile
   @include breakpoint(min, mobile-extra)
     @include disable
+
+
+// ! Tags
+.gda-tag
+  margin-right: 20px
+  padding: 5px 20px
+  display: inline-block
+  font:
+    size: 2.6rem
+    weight: 400
+  @include breakpoint(max, tablet)
+    font:
+      size: 1.8rem
+  border: 1px solid $black
+
+
