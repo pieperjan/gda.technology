@@ -21,9 +21,11 @@
         width: inherit
 
         #burger-menu-toggler
+          ~ label
+            margin-right: 20px
+            cursor: pointer
           &:checked ~ app-sidenav
             left: 0
-            border: 1px solid red
 
         &.gda-navi
           .gda-navi-link
@@ -80,7 +82,78 @@
   top: 0
   bottom: 0
   left: -100vw
-  width: 100vw
+  width: 70vw
   height: 100vh
   background-color: $white
+  border-right: 1px solid $outline-color
   @include transition(left)
+  @include defaultshadow
+  z-index: -1
+
+
+
+// ! Footer
+footer.gda-footer
+  .gda-col,
+  .gda-row
+    padding: 0 !important
+  .footer-contact
+    padding-bottom: 30px
+    max-width: 600px
+    font:
+      size: 5rem
+      weight: bold
+    @include breakpoint(max, tablet)
+      font:
+        size: 3rem
+    @include breakpoint(max, mobile)
+      font:
+        size: 2.1rem
+  a.link-mail
+    position: relative
+    padding: 20px 40px
+    font:
+      size: 5rem
+      weight: bold
+    @include breakpoint(max, tablet)
+      font:
+        size: 3rem
+    @include breakpoint(max, mobile)
+      font:
+        size: 2.1rem
+    background-color: $yellow
+    color: $black
+    &:before
+      content: ''
+      position: absolute
+      top: -15px
+      left: 40px
+      display: block
+      width: 50px
+      height: 50px
+      background-color: $yellow
+      transform: rotate(30deg)
+      z-index: -1
+  .footer-service
+    margin-top: $default-padding-vertical
+    @include breakpoint(max, mobile-extra)
+      margin-top: $default-padding-horizontal
+    @include breakpoint(max, mobile)
+      display: flex
+      flex-direction: column
+      align-items: center
+
+    width: 100%
+    .footer-service-logo
+      margin-right: 5rem
+      width: 200px
+    .footer-service-service
+      width: 100%
+      .service-navigation
+        padding: 30px 30px !important
+        list-style-type: none
+        .service-navigation-item
+          margin-right: 10px
+          margin-bottom: 0
+          .navigation-item-link
+

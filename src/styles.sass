@@ -12,6 +12,7 @@ html
         family: $default-fontfamily
         weight: 500
     line-height: 1.35
+    scroll-behavior: smooth
 
 h1,
 h2,
@@ -84,7 +85,17 @@ h6
     font-weight: 700
 
 a
-    font-size: 1.8rem
+  font-size: 1.8rem
+  text-decoration: none !important
+  color: $blue
+
+// ! Default Hover
+a:not(.gda-navi-link):not(.gda-logo-link)
+  @include transition(all)
+  &:hover,
+  &:focus,
+  &:focus-within
+    transform: translateX(4px)
 
 
 // * Default Classes
@@ -124,19 +135,50 @@ a
     margin-left: 0 !important
     margin-right: 0 !important
 
+.gda-half-width-right
+  > .gda-col
+    padding-left: 50% !important
+    @include breakpoint(max, tablet)
+      padding-left: 40% !important
+    @include breakpoint(max, tablet)
+      padding-left: 30% !important
+    @include breakpoint(max, tablet)
+      padding-left: $default-padding-horizontal !important
+
+.gda-half-width-left
+  > .gda-col
+    padding-right: 50% !important
+    @include breakpoint(max, laptop)
+      padding-right: 40% !important
+    @include breakpoint(max, tablet)
+      padding-right: 30% !important
+    @include breakpoint(max, tablet)
+      padding-right: $default-padding-horizontal !important
 
 .gda-container
-    width: 85vw
-    max-width: 1800px
+    width: $default-container
+    max-width: $max-width
     margin-left: auto
     margin-right: auto
     .gda-row
+      flex-direction: row
+    .gda-column
+      flex-direction: column
+    .gda-row,
+    .gda-column
         display: flex
-        flex-direction: row
+        &.gda-bg-light
+          .gda-col
+            @include breakpoint(max, mobile-extra)
+              padding-left: $default-padding-vertical
+              padding-right: $default-padding-vertical
         &.gda-row-space-between
             justify-content: space-between
         .gda-col
-            padding: $default-padding-horizontal $default-padding-vertical
+            padding: $default-padding-vertical $default-padding-horizontal
+            @include breakpoint(max, mobile-extra)
+              padding-left: 0
+              padding-right: 0
             display: flex
             flex-direction: column
             width: 100%
@@ -149,9 +191,28 @@ a
             &.gda-col-bottom
                 align-items: flex-end
 
-
+// ! Default Padding
 .gda-default-cell-style
-    padding: $default-padding-horizontal
+    padding: $default-padding-vertical $default-padding-horizontal
+    @include breakpoint(max, mobile-extra)
+      padding-top: $default-padding-horizontal
+      padding-bottom: $default-padding-horizontal
+
+.gda-laptop-default-cell-style
+  @include breakpoint(max, laptop)
+    padding: $default-padding-vertical $default-padding-horizontal
+
+.gda-tablet-default-cell-style
+  @include breakpoint(max, tablet)
+    padding: $default-padding-vertical $default-padding-horizontal
+
+.gda-mobile-default-cell-style
+  @include breakpoint(max, mobile)
+    padding: $default-padding-vertical $default-padding-horizontal
+
+// ! Default Flex Config
+.display-flex
+  display: flex
 
 .flex-row
     flex-direction: row
@@ -166,6 +227,12 @@ a
     justify-content: flex-start
     &.space-between
         align-items: space-between
+
+.flex-justify-center
+  justify-content: center
+
+.align-items-center
+  align-items: center
 
 .fixed-full-size
     position: fixed
@@ -196,12 +263,14 @@ a
     grid-template-columns: 1fr 1fr
     grid-template-row: 1fr 1fr
     gap: 50px
+    @include breakpoint(max, mobile-extra)
+      grid-template-columns: 1fr
+      grid-template-row: 1fr
     &.gda-grid-2-column
     &.gda-grid-4-column
 
 
 .hide-on-desktop
-  @include breakpoint(min, laptop)
     @include disable
 .hide-on-laptop
   @include breakpoint(max, laptop)
@@ -215,13 +284,35 @@ a
 
 .show-on-desktop
   @include breakpoint(max, laptop)
-    @include disable
+    @include activate
 .show-on-laptop
-  @include breakpoint(min, laptop)
-    @include disable
+  @include breakpoint(max, laptop)
+    @include activate
 .show-on-tablet
-  @include breakpoint(min, tablet-extra)
-    @include disable
+  @include breakpoint(max, tablet-extra)
+    @include activate
 .show-on-mobile
-  @include breakpoint(min, mobile-extra)
-    @include disable
+  @include breakpoint(max, mobile-extra)
+    @include activate
+
+
+// ! Tags
+.gda-tag
+  margin-right: 20px
+  padding: 5px 20px
+  display: inline-block
+  font:
+    size: 2.6rem
+    weight: 400
+  @include breakpoint(max, tablet)
+    font:
+      size: 1.8rem
+  border: 1px solid $black
+
+
+
+// !  Divider
+.divider-mobile
+  @include breakpoint(max, mobile-extra)
+    display: block
+    height: 100px
