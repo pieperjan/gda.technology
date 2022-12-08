@@ -19,6 +19,9 @@ import { HomeComponent } from './_component/home/home.component';
 import { FormateComponent } from './_atome/formate/formate.component';
 import { ImpressumComponent } from './_component/impressum/impressum.component';
 import { DatenschutzComponent } from './_component/datenschutz/datenschutz.component';
+import { LogoComponent } from './_atome/logo/logo.component';
+import { QuickmenuComponent } from './_atome/quickmenu/quickmenu.component';
+import { NavigationComponent } from './_atome/navigation/navigation.component';
 
 
 @NgModule({
@@ -35,6 +38,9 @@ import { DatenschutzComponent } from './_component/datenschutz/datenschutz.compo
     FormateComponent,
     ImpressumComponent,
     DatenschutzComponent,
+    LogoComponent,
+    QuickmenuComponent,
+    NavigationComponent,
 
   ],
   imports: [

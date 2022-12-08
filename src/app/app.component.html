@@ -22,8 +22,8 @@
 <div class="gda-navigation">
   <div class="gda-container">
     <div class="gda-row gda-row-space-between">
-      <div class="gda-col gda-col-row gda-col-center gda-no-padding gda-no-margin">
-        <!-- * Sidenav * -->
+      <!--<div class="gda-col gda-col-row gda-col-center gda-no-padding gda-no-margin">
+         * Sidenav *
         <input type="checkbox" id="burger-menu-toggler" name="burger-menu-toggler" class="hide-on-desktop">
         <label for="burger-menu-toggler"
                class="burger-menu hide-on-desktop hide-on-laptop hide-on-tablet show-on-mobile">
@@ -32,31 +32,12 @@
           </svg>
         </label>
         <app-sidenav class="gda-sidenav"></app-sidenav>
-
-        <!-- * Sidenav Ende * -->
-        <a class="gda-logo-link" routerLink="/">
-          <div class="gda-logo">
-            <span class="yellow">G<span class="hide-on-tablet">erman</span></span>
-            <span class="blue">D<span class="hide-on-tablet">igital</span>
-            </span>
-            <span>A<span class="hide-on-mobile">llstars</span></span>.
-          </div>
-          <small class="gda-logo-slogan">Webagentur</small>
-        </a>
+      </div>-->
+      <div class="gda-col gda-col-row flex-justify-spacebetween gda-no-padding gda-no-margin full-width">
+        <app-quickmenu></app-quickmenu>
+        <app-logo></app-logo>
+        <app-navigation></app-navigation>
       </div>
-
-      <div class="gda-col gda-col-row gda-navi gda-col-center gda-no-padding gda-no-margin hide-on-mobile">
-        <a class="gda-navi-link" href="#services">Leistungen</a>
-        <a class="gda-navi-link" href="#vision">Vision</a>
-        <a class="gda-navi-link" href="#mission">Mission</a>
-        <a class="gda-navi-link" href="#contact">Kontakt</a>
-      </div>
-
-      <!--
-      <div class="gda-col gda-col-row gda-col-center gda-no-padding gda-no-margin">
-        <app-chips></app-chips>
-      </div>
-      -->
     </div>
   </div>
 

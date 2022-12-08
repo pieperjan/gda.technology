@@ -115,4 +115,12 @@ h1 {
   font-size: 70px;
   font-weight: 500;
 }
+
+.gda-fullheight {
+  height: 100%;
+}
+.gda-fullwidth {
+  width: 100%;
+}
+
 /*# sourceMappingURL=styles.css.map */

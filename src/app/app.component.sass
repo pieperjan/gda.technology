@@ -10,15 +10,12 @@
   top: 0
   left: 0
   right: 0
-  background-color: $white
-  border-bottom: 1px solid $outline-color
-  @include defaultshadow
   z-index: 1020
 
   .gda-container
     .gda-row
       .gda-col
-        width: inherit
+        padding: 15px 10% 0 !important
 
         #burger-menu-toggler
           ~ label
@@ -28,15 +25,7 @@
             left: 0
 
         &.gda-navi
-          .gda-navi-link
-            padding: 20px 10px
-            display: flex
-            justify-content: center
-            align-items: center
-            text-align: center
-            text-decoration: none
-            color: $black
-            @include navihover
+
 
         .gda-sidenav-toggler
           padding: 0
