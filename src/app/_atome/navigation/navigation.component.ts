@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.sass']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit
+{
 
-  constructor() { }
+  // ! Small Header
+  scrollednavigation: boolean = false;
 
-  ngOnInit(): void {
+  @HostListener("window:scroll", [])
+  onWindowScroll()
+  {
+    this.scrollednavigation = window.scrollY > 0;
+  }
+
+  constructor()
+  {
+  }
+
+  ngOnInit(): void
+  {
   }
 
 }

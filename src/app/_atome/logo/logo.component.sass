@@ -1,2 +1,15 @@
 @import "../../../assets/sass/_var"
 @import "../../../assets/sass/_mixins"
+
+.gda-logo-link
+  .gda-logo
+    svg
+      max-width: 120px
+  .gda-logo,
+  .gda-logo svg
+    @include transition(all)
+  &.smalllogo
+    .gda-logo,
+    .gda-logo svg
+      height: 70px
+

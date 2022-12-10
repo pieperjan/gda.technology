@@ -3,6 +3,7 @@
 @import ../assets/sass/_mixins
 
 .gda-main
+  background-color: $white
   z-index: 0
 
 .gda-navigation
@@ -12,21 +13,59 @@
   right: 0
   z-index: 1020
 
+  // ! Small Header
+  &.smallheader
+    .gda-container
+      .gda-row
+        .gda-col
+            padding-top: 0 !important
+            background-color: $white
+            border-bottom: 1px solid $outline-color
+            .line
+              background-color: $black !important
+
   .gda-container
     .gda-row
-      .gda-col
-        padding: 15px 10% 0 !important
-
+      .wrap-burger-menu
+        margin-top: 30px
+        .burger-menu
+          .line
+            margin-bottom: 6px
+            display: block
+            width: 25px
+            height: 2px
+            background-color: $white
+            @include transition(all)
         #burger-menu-toggler
           ~ label
             margin-right: 20px
             cursor: pointer
-          &:checked ~ app-sidenav
-            left: 0
 
+          &:checked
+            ~ .burger-menu
+              .line
+                height: 3px
+              .one
+                width: 30px
+                -webkit-transform: rotate(45deg) translate(6px, 6px)
+                -ms-transform: rotate(45deg) translate(6px, 6px)
+                transform: rotate(45deg) translate(6px, 6px)
+              .two
+                width: 0
+              .three
+                width: 30px
+                -webkit-transform: rotate(-45deg) translate(6px, -6px)
+                -ms-transform: rotate(-45deg) translate(6px, -6px)
+                transform: rotate(-45deg) translate(6px, -6px)
+
+            ~ app-sidenav
+              left: 0
+
+      .gda-col
+        padding: 15px 10% 0 !important
+        @include breakpoint(max, mobile-extra)
+          padding: 0 30px !important
         &.gda-navi
-
-
         .gda-sidenav-toggler
           padding: 0
           margin: 0
@@ -34,7 +73,6 @@
           background: 0
           border-radius: 0
           cursor: pointer
-
         .gda-logo-link
           padding: 15px 0
           max-height: 100px
@@ -50,6 +88,7 @@
             font-size: 2rem
             line-height: 1
             color: $black
+
             *
               font-weight: bold !important
 
@@ -82,12 +121,12 @@
   z-index: -1
 
 
-
 // ! Footer
 footer.gda-footer
   .gda-col,
   .gda-row
     padding: 0 !important
+
   .footer-contact
     padding-bottom: 30px
     max-width: 600px
@@ -100,6 +139,7 @@ footer.gda-footer
     @include breakpoint(max, mobile)
       font:
         size: 2.1rem
+
   a.link-mail
     position: relative
     padding: 20px 40px
@@ -114,6 +154,7 @@ footer.gda-footer
         size: 2.1rem
     background-color: $yellow
     color: $black
+
     &:before
       content: ''
       position: absolute
@@ -125,6 +166,7 @@ footer.gda-footer
       background-color: $yellow
       transform: rotate(30deg)
       z-index: -1
+
   .footer-service
     margin-top: $default-padding-vertical
     @include breakpoint(max, mobile-extra)
@@ -135,16 +177,21 @@ footer.gda-footer
       align-items: center
 
     width: 100%
+
     .footer-service-logo
       margin-right: 5rem
       width: 200px
+
     .footer-service-service
       width: 100%
+
       .service-navigation
         padding: 30px 30px !important
         list-style-type: none
+
         .service-navigation-item
           margin-right: 10px
           margin-bottom: 0
+
           .navigation-item-link
 

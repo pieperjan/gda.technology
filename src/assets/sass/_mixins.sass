@@ -2,7 +2,10 @@
 @import ../sass/_var
 
 @mixin transition($a)
+    -webkit-transition: $a $default-duration $default-timingfunction
+    -o-transition: $a $default-duration $default-timingfunction
     transition: $a $default-duration $default-timingfunction
+
 
 @mixin navihover
     @include transition(all)

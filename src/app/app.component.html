@@ -19,25 +19,26 @@
 <!-- * Kontakt Ende * -->
 
 <!-- Basic Container -->
-<div class="gda-navigation">
+<div class="gda-navigation" [ngClass]="{ smallheader: scrolled }">
   <div class="gda-container">
     <div class="gda-row gda-row-space-between">
-      <!--<div class="gda-col gda-col-row gda-col-center gda-no-padding gda-no-margin">
-         * Sidenav *
-        <input type="checkbox" id="burger-menu-toggler" name="burger-menu-toggler" class="hide-on-desktop">
-        <label for="burger-menu-toggler"
-               class="burger-menu hide-on-desktop hide-on-laptop hide-on-tablet show-on-mobile">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
-            <path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"/>
-          </svg>
-        </label>
-        <app-sidenav class="gda-sidenav"></app-sidenav>
-      </div>-->
       <div class="gda-col gda-col-row flex-justify-spacebetween gda-no-padding gda-no-margin full-width">
         <app-quickmenu></app-quickmenu>
         <app-logo></app-logo>
         <app-navigation></app-navigation>
+        <div
+          class="wrap-burger-menu gda-col-row gda-col-center gda-no-padding hide-on-desktop hide-on-laptop show-on-tablet show-on-mobile">
+          <input type="checkbox" id="burger-menu-toggler" name="burger-menu-toggler" class="hide-on-desktop">
+          <label for="burger-menu-toggler"
+                 class="burger-menu">
+            <span class="line one"></span>
+            <span class="line two"></span>
+            <span class="line three"></span>
+          </label>
+          <app-sidenav class="gda-sidenav"></app-sidenav>
+        </div>
       </div>
+
     </div>
   </div>
 

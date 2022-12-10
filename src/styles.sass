@@ -13,6 +13,7 @@ html
         weight: 500
     line-height: 1.35
     scroll-behavior: smooth
+    background-color: $website-bg
 
 h1,
 h2,
@@ -42,11 +43,11 @@ h1
     font-size: 3.2rem
     font-weight: 500
     @include breakpoint(min,tablet)
-        font-size: 5rem
-    @include breakpoint(min,laptop)
-        font-size: 6rem
-    @include breakpoint(min,desktop)
         font-size: 7rem
+    @include breakpoint(min,laptop)
+        font-size: 10rem
+    @include breakpoint(min,desktop)
+        font-size: 10rem
 
 h2
     font-size: 2.8rem
@@ -69,8 +70,10 @@ h3
 h4
     font-size: 2.1rem
     font-weight: 500
-    @include breakpoint(min,laptop)
+    @include breakpoint(min,laptop-extra)
         font-size: 3rem
+    @include breakpoint(min,laptop)
+        font-size: 2.5rem
 
 h5
     font-size: 1.8rem
@@ -165,6 +168,8 @@ a:not(.gda-navi-link):not(.gda-logo-link)
     max-width: $max-width
     margin-left: auto
     margin-right: auto
+    @include breakpoint(max, mobile)
+      width: 100%
     .gda-row
       flex-direction: row
     .gda-column
@@ -226,6 +231,13 @@ a:not(.gda-navi-link):not(.gda-logo-link)
     &.space-between
         justify-content: space-between
 
+.flex-column-desktop
+  @include breakpoint(max,mobile)
+.flex-column-laptop
+.flex-column-tablet
+.flex-column-mobile
+  @include breakpoint(max,mobile)
+
 .flex-column
     flex-direction: column
     align-items: flex-start
@@ -241,6 +253,12 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 
 .align-items-center
   align-items: center
+
+.flex-wrap
+  flex-wrap: wrap
+
+.flex-align-stretch
+  align-items: stretch
 
 .fixed-full-size
     position: fixed
@@ -332,9 +350,71 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 
 
 // ! Padding/Margin
+.gda-p-0-5
+  padding: $padding-0-5
 .gda-p-1
   padding: $padding-1
+.gda-p-2
+  padding: $padding-2
+.gda-p-3
+  padding: $padding-3
+.gda-p-4
+  padding: $padding-4
+.gda-p-5
+  padding: $padding-5
 
+// Desktop
+@include breakpoint(max, desktop)
+  .gda-p-desktop-1
+    padding: $padding-0-5
+  .gda-p-desktop-2
+    padding: $padding-1
+  .gda-p-desktop-3
+    padding: $padding-2
+  .gda-p-desktop-4
+    padding: $padding-3
+  .gda-p-desktop-5
+    padding: $padding-4
+
+// Laptop Extra
+@include breakpoint(max, laptop-extra)
+  .gda-p-laptop-extra-2
+    padding: $padding-0-5
+  .gda-p-laptop-extra-3
+    padding: $padding-1
+  .gda-p-laptop-extra-4
+    padding: $padding-2
+  .gda-p-laptop-extra-5
+    padding: $padding-3
+
+// Laptop
+@include breakpoint(max, laptop)
+.gda-p-laptop-extra-3
+  padding: $padding-0-5
+.gda-p-laptop-extra-4
+  padding: $padding-1
+.gda-p-laptop-extra-5
+  padding: $padding-2
+
+// tablet
+@include breakpoint(max, tablet)
+.gda-p-laptop-extra-4
+  padding: $padding-0-5
+.gda-p-laptop-extra-5
+  padding: $padding-1
+
+
+// Mobile
+@include breakpoint(max,mobile)
+  .gda-p-mobile-default
+    padding: $padding-3
+
+
+
+
+
+.gda-p-left-0-5
+  padding-left: $padding-0-5
 .gda-p-left-1
   padding-left: $padding-1
 .gda-p-left-2
@@ -346,6 +426,8 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 .gda-p-left-5
   padding-left: $padding-5
 
+.gda-p-right-0-5
+  padding-right: $padding-0-5
 .gda-p-right-1
   padding-right: $padding-1
 .gda-p-right-2
@@ -357,6 +439,8 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 .gda-p-right-5
   padding-right: $padding-5
 
+.gda-p-top-0-5
+  padding-top: $padding-0-5
 .gda-p-top-1
   padding-top: $padding-1
 .gda-p-top-2
@@ -368,6 +452,8 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 .gda-p-top-5
   padding-top: $padding-5
 
+.gda-p-bottom-0-5
+  padding-bottom: $padding-0-5
 .gda-p-bottom-1
   padding-bottom: $padding-1
 .gda-p-bottom-2
@@ -378,6 +464,73 @@ a:not(.gda-navi-link):not(.gda-logo-link)
   padding-bottom: $padding-4
 .gda-p-bottom-5
   padding-bottom: $padding-5
+
+// ! Margin
+.gda-m-0-5
+  margin: $margin-0-5
+.gda-m-1
+  margin: $margin-1
+.gda-m-2
+  margin: $margin-2
+.gda-m-3
+  margin: $margin-3
+.gda-m-4
+  margin: $margin-4
+.gda-m-5
+  margin: $margin-5
+
+.gda-m-left-0-5
+  margin-left: $margin-0-5
+.gda-m-left-1
+  margin-left: $margin-1
+.gda-m-left-2
+  margin-left: $margin-2
+.gda-m-left-3
+  margin-left: $margin-3
+.gda-m-left-4
+  margin-left: $margin-4
+.gda-m-left-5
+  margin-left: $margin-5
+
+.gda-m-right-0-5
+  margin-right: $margin-0-5
+.gda-m-right-1
+  margin-right: $margin-1
+.gda-m-right-2
+  margin-right: $margin-2
+.gda-m-right-3
+  margin-right: $margin-3
+.gda-m-right-4
+  margin-right: $margin-4
+.gda-m-right-5
+  margin-right: $margin-5
+
+.gda-m-top-0-5
+  margin-top: $margin-0-5
+.gda-m-top-1
+  margin-top: $margin-1
+.gda-m-top-2
+  margin-top: $margin-2
+.gda-m-top-3
+  margin-top: $margin-3
+.gda-m-top-4
+  margin-top: $margin-4
+.gda-m-top-5
+  margin-top: $margin-5
+
+.gda-m-bottom-0-5
+  margin-bottom: $margin-0-5
+.gda-m-bottom-1
+  margin-bottom: $margin-1
+.gda-m-bottom-2
+  margin-bottom: $margin-2
+.gda-m-bottom-3
+  margin-bottom: $margin-3
+.gda-m-bottom-4
+  margin-bottom: $margin-4
+.gda-m-bottom-5
+  margin-bottom: $margin-5
+
 
 
 // ! Colors

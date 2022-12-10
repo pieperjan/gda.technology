@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-quickmenu',
@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quickmenu.component.sass']
 })
 export class QuickmenuComponent implements OnInit {
+
+  // ! Small Header
+  scrolledquickmenu: boolean = false;
+
+  @HostListener("window:scroll", [])
+  onWindowScroll()
+  {
+    this.scrolledquickmenu = window.scrollY > 0;
+  }
 
   constructor() { }
 

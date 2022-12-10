@@ -22,6 +22,8 @@ import { DatenschutzComponent } from './_component/datenschutz/datenschutz.compo
 import { LogoComponent } from './_atome/logo/logo.component';
 import { QuickmenuComponent } from './_atome/quickmenu/quickmenu.component';
 import { NavigationComponent } from './_atome/navigation/navigation.component';
+import { LeistungenComponent } from './_atome/leistungen/leistungen.component';
+import { ReferenzenComponent } from './_component/referenzen/referenzen.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { NavigationComponent } from './_atome/navigation/navigation.component';
     LogoComponent,
     QuickmenuComponent,
     NavigationComponent,
+    LeistungenComponent,
+    ReferenzenComponent,
 
   ],
   imports: [

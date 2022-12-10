@@ -3,11 +3,22 @@
 
 .quickmenu
   margin-top: 20px
+  @include transition(margin-top)
+  &.smallquickmenu
+    margin-top: 22px
+    svg
+      path
+        fill: $black
+    .text
+      color: $black
   .call,
   .mail
-    font-size: 14px
+    font-size: 1rem
   svg
+    margin-right: 7px
     path
       fill: $white
+      @include transition(fill)
   .text
     color: $white
+    @include transition(color)
