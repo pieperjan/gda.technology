@@ -48,6 +48,8 @@
   p
     column-count: 2
     column-gap: 4rem
+    @include breakpoint(max, tablet)
+      column-count: 1
 
 .project-item
   border: 1px solid $website-bg
