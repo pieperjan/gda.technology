@@ -1,0 +1,39 @@
+// ! Custom Styling Navigation/AppComponent
+@import ../../../assets/sass/_var
+@import ../../../assets/sass/_mixins
+.wrap-heroimage
+  position: relative
+  display: block
+  height: 534px
+  @include breakpoint(max, laptop)
+    height: 400px
+  @include breakpoint(max, tablet-extra)
+    height: 350px
+  @include breakpoint(max, mobile-extra)
+    height: 250px
+  width: 100%
+  overflow: hidden
+
+  .heroimage
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    display: block
+    width: 100%
+    height: 100%
+    @include breakpoint(max, laptop)
+      background-image: url('/assets/images/home/b_laptop_heroimage_1484438981_komp.webp')
+    @include breakpoint(max, tablet-extra)
+      background-image: url('/assets/images/home/c_tablet_heroimage_1484438981_komp.webp')
+    @include breakpoint(max, mobile-extra)
+      background-image: url('/assets/images/home/d_mobile_heroimage_1484438981_komp.webp')
+    background-image: url('/assets/images/home/a_desktop_heroimage_1484438981_komp.webp')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+
+  &.subpage
+    height: 300px
+
