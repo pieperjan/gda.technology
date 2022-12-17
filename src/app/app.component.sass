@@ -26,6 +26,19 @@
 
   .gda-container
     .gda-row
+
+      // !Mobile Reihenfolge
+      @include breakpoint(max, mobile)
+        app-quickmenu
+          order: 1
+        app-logo
+          order: 0
+        app-navigation
+          order: 2
+        .wrap-burger-menu
+          order: 3
+
+
       .wrap-burger-menu
         margin-top: 30px
         .burger-menu

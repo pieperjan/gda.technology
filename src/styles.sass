@@ -15,6 +15,7 @@ html
     scroll-behavior: smooth
     background-color: $website-bg
 
+
 h1,
 h2,
 h3,
@@ -35,23 +36,25 @@ h5,
 h6,
 p,
 li
-  margin-bottom: 1rem
+  margin-bottom: 0
 
 
 
 h1
     font-size: 3.2rem
-    font-weight: 500
+    font-weight: bold
+    line-height: 1.2
     @include breakpoint(min,tablet)
-        font-size: 7rem
+        font-size: 5.2rem
     @include breakpoint(min,laptop)
-        font-size: 10rem
+        font-size: 6.2rem
     @include breakpoint(min,desktop)
-        font-size: 10rem
+        font-size: 6.2rem
 
 h2
     font-size: 2.8rem
     font-weight: 500
+    line-height: 1.2
     @include breakpoint(min,tablet)
         font-size: 4rem
     @include breakpoint(min,laptop)
@@ -62,6 +65,7 @@ h2
 h3
     font-size: 2.4rem
     font-weight: 500
+    line-height: 1.2
     @include breakpoint(min,tablet)
         font-size: 3rem
     @include breakpoint(min,desktop)
@@ -70,6 +74,7 @@ h3
 h4
     font-size: 2.1rem
     font-weight: 500
+    line-height: 1.2
     @include breakpoint(min,laptop-extra)
         font-size: 3rem
     @include breakpoint(min,laptop)
@@ -78,6 +83,7 @@ h4
 h5
     font-size: 1.8rem
     font-weight: 500
+    line-height: 1.2
     @include breakpoint(min,laptop)
         font-size: 2.1rem
 
@@ -94,6 +100,7 @@ a
 p
   margin-bottom: 3rem
   font-size: 1.8rem
+  color: $text
 
 // ! Default Hover
 a:not(.gda-navi-link):not(.gda-logo-link)
@@ -113,13 +120,27 @@ a:not(.gda-navi-link):not(.gda-logo-link)
     background-color: $bg-dark
     color: $white
 
+.gda-bg-blue
+    background-color: $darkblue
+    color: $white
+
+.gda-bg-yellow
+    background-color: $yellow
+    color: $black
+
+.gda-bg-green
+    background-color: $green
+    color: $white
+
 .blue
   color: $blue
-  font-weight: normal
 
 .yellow
     color: $yellow
-    font-weight: normal
+
+.green
+  color: $green
+
 
 .gda-no-padding
     padding: 0 !important
@@ -131,6 +152,18 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 .gda-no-horizontal-padding
     padding-left: 0 !important
     padding-right: 0 !important
+
+.gda-no-padding-bottom
+  padding-bottom: 0 !important
+
+.gda-no-padding-top
+  padding-top: 0 !important
+
+.gda-no-padding-left
+  padding-left: 0 !important
+
+.gda-no-padding-right
+  padding-right: 0 !important
 
 .gda-no-margin
     margin: 0 !important
@@ -168,7 +201,9 @@ a:not(.gda-navi-link):not(.gda-logo-link)
     max-width: $max-width
     margin-left: auto
     margin-right: auto
-    @include breakpoint(max, mobile)
+    @include breakpoint(max, desktop)
+      width: 95%
+    @include breakpoint(max, laptop)
       width: 100%
     .gda-row
       flex-direction: row
@@ -225,18 +260,14 @@ a:not(.gda-navi-link):not(.gda-logo-link)
   display: flex
 
 .flex-row
-    flex-direction: row
+    flex-direction: row !important
     align-items: flex-start
     justify-content: flex-start
+    @include breakpoint(max,mobile)
+      flex-direction: column !important
     &.space-between
         justify-content: space-between
 
-.flex-column-desktop
-  @include breakpoint(max,mobile)
-.flex-column-laptop
-.flex-column-tablet
-.flex-column-mobile
-  @include breakpoint(max,mobile)
 
 .flex-column
     flex-direction: column
@@ -259,6 +290,9 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 
 .flex-align-stretch
   align-items: stretch
+
+.flex-align-center
+  align-items: center
 
 .fixed-full-size
     position: fixed
@@ -465,6 +499,8 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 .gda-p-bottom-5
   padding-bottom: $padding-5
 
+
+
 // ! Margin
 .gda-m-0-5
   margin: $margin-0-5
@@ -479,6 +515,59 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 .gda-m-5
   margin: $margin-5
 
+
+// Desktop
+@include breakpoint(max, desktop)
+  .gda-m-desktop-1
+    padding: $margin-0-5
+  .gda-m-desktop-2
+    padding: $margin-1
+  .gda-m-desktop-3
+    padding: $margin-2
+  .gda-m-desktop-4
+    padding: $margin-3
+  .gda-m-desktop-5
+    padding: $margin-4
+
+// Laptop Extra
+@include breakpoint(max, laptop-extra)
+  .gda-m-laptop-extra-2
+    padding: $margin-0-5
+  .gda-m-laptop-extra-3
+    padding: $margin-1
+  .gda-m-laptop-extra-4
+    padding: $margin-2
+  .gda-m-laptop-extra-5
+    padding: $margin-3
+
+// Laptop
+@include breakpoint(max, laptop)
+.gda-m-laptop-extra-3
+  padding: $margin-0-5
+.gda-m-laptop-extra-4
+  padding: $margin-1
+.gda-m-laptop-extra-5
+  padding: $margin-2
+
+// tablet
+@include breakpoint(max, tablet)
+.gda-m-laptop-extra-4
+  padding: $margin-0-5
+.gda-m-laptop-extra-5
+  padding: $margin-1
+
+
+// Mobile
+@include breakpoint(max,mobile)
+  .gda-m-mobile-default
+    padding: $margin-3
+
+
+
+
+
+
+
 .gda-m-left-0-5
   margin-left: $margin-0-5
 .gda-m-left-1
@@ -491,6 +580,59 @@ a:not(.gda-navi-link):not(.gda-logo-link)
   margin-left: $margin-4
 .gda-m-left-5
   margin-left: $margin-5
+
+
+// Desktop
+@include breakpoint(max, desktop)
+  .gda-m-left-desktop-1
+    margin-left: $margin-0-5
+  .gda-m-left-desktop-2
+    margin-left: $margin-1
+  .gda-m-left-desktop-3
+    margin-left: $margin-2
+  .gda-m-left-desktop-4
+    margin-left: $margin-3
+  .gda-m-left-desktop-5
+    margin-left: $margin-4
+
+// Laptop Extra
+@include breakpoint(max, laptop-extra)
+  .gda-m-left-laptop-extra-2
+    margin-left: $margin-0-5
+  .gda-m-left-laptop-extra-3
+    margin-left: $margin-1
+  .gda-m-left-laptop-extra-4
+    margin-left: $margin-2
+  .gda-m-left-laptop-extra-5
+    margin-left: $margin-3
+
+// Laptop
+@include breakpoint(max, laptop)
+.gda-m-left-laptop-extra-3
+  margin-left: $margin-0-5
+.gda-m-left-laptop-extra-4
+  margin-left: $margin-1
+.gda-m-left-laptop-extra-5
+  margin-left: $margin-2
+
+// tablet
+@include breakpoint(max, tablet)
+.gda-m-left-laptop-extra-4
+  margin-left: $margin-0-5
+.gda-m-left-laptop-extra-5
+  margin-left: $margin-1
+
+
+// Mobile
+@include breakpoint(max,mobile)
+  .gda-m-left-mobile-default
+    margin-left: $margin-3
+  .gda-m-left-mobile-0
+    margin-left: 0 !important
+
+
+
+
 
 .gda-m-right-0-5
   margin-right: $margin-0-5
@@ -505,6 +647,64 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 .gda-m-right-5
   margin-right: $margin-5
 
+
+// Desktop
+@include breakpoint(max, desktop)
+  .gda-m-right-desktop-1
+    margin-right: $margin-0-5
+  .gda-m-right-desktop-2
+    margin-right: $margin-1
+  .gda-m-right-desktop-3
+    margin-right: $margin-2
+  .gda-m-right-desktop-4
+    margin-right: $margin-3
+  .gda-m-right-desktop-5
+    margin-right: $margin-4
+
+// Laptop Extra
+@include breakpoint(max, laptop-extra)
+  .gda-m-right-laptop-extra-2
+    margin-right: $margin-0-5
+  .gda-m-right-laptop-extra-3
+    margin-right: $margin-1
+  .gda-m-right-laptop-extra-4
+    margin-right: $margin-2
+  .gda-m-right-laptop-extra-5
+    margin-right: $margin-3
+
+// Laptop
+@include breakpoint(max, laptop)
+.gda-m-right-laptop-extra-3
+  margin-right: $margin-0-5
+.gda-m-right-laptop-extra-4
+  margin-right: $margin-1
+.gda-m-right-laptop-extra-5
+  margin-right: $margin-2
+
+// tablet
+@include breakpoint(max, tablet)
+.gda-m-right-laptop-extra-4
+  margin-right: $margin-0-5
+.gda-m-right-laptop-extra-5
+  margin-right: $margin-1
+
+
+// Mobile
+@include breakpoint(max,mobile)
+  .gda-m-right-mobile-default
+    margin-right: $margin-3
+  .gda-m-right-mobile-0
+    margin-right: 0 !important
+
+
+
+
+
+
+
+
+
+
 .gda-m-top-0-5
   margin-top: $margin-0-5
 .gda-m-top-1
@@ -518,6 +718,60 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 .gda-m-top-5
   margin-top: $margin-5
 
+
+// Desktop
+@include breakpoint(max, desktop)
+  .gda-m-top-desktop-1
+    margin-top: $margin-0-5
+  .gda-m-top-desktop-2
+    margin-top: $margin-1
+  .gda-m-top-desktop-3
+    margin-top: $margin-2
+  .gda-m-top-desktop-4
+    margin-top: $margin-3
+  .gda-m-top-desktop-5
+    margin-top: $margin-4
+
+// Laptop Extra
+@include breakpoint(max, laptop-extra)
+  .gda-m-top-laptop-extra-2
+    margin-top: $margin-0-5
+  .gda-m-top-laptop-extra-3
+    margin-top: $margin-1
+  .gda-m-top-laptop-extra-4
+    margin-top: $margin-2
+  .gda-m-top-laptop-extra-5
+    margin-top: $margin-3
+
+// Laptop
+@include breakpoint(max, laptop)
+.gda-m-top-laptop-extra-3
+  margin-top: $margin-0-5
+.gda-m-top-laptop-extra-4
+  margin-top: $margin-1
+.gda-m-top-laptop-extra-5
+  margin-top: $margin-2
+
+// tablet
+@include breakpoint(max, tablet)
+.gda-m-top-laptop-extra-4
+  margin-top: $margin-0-5
+.gda-m-top-laptop-extra-5
+  margin-top: $margin-1
+
+
+// Mobile
+@include breakpoint(max,mobile)
+  .gda-m-top-mobile-default
+    margin-top: $margin-3
+  .gda-m-top-mobile-0
+    margin-top: 0 !important
+
+
+
+
+
+
 .gda-m-bottom-0-5
   margin-bottom: $margin-0-5
 .gda-m-bottom-1
@@ -530,6 +784,57 @@ a:not(.gda-navi-link):not(.gda-logo-link)
   margin-bottom: $margin-4
 .gda-m-bottom-5
   margin-bottom: $margin-5
+
+
+// Desktop
+@include breakpoint(max, desktop)
+  .gda-m-bottom-desktop-1
+    margin-bottom: $margin-0-5
+  .gda-m-bottom-desktop-2
+    margin-bottom: $margin-1
+  .gda-m-bottom-desktop-3
+    margin-bottom: $margin-2
+  .gda-m-bottom-desktop-4
+    margin-bottom: $margin-3
+  .gda-m-bottom-desktop-5
+    margin-bottom: $margin-4
+
+// Laptop Extra
+@include breakpoint(max, laptop-extra)
+  .gda-m-bottom-laptop-extra-2
+    margin-bottom: $margin-0-5
+  .gda-m-bottom-laptop-extra-3
+    margin-bottom: $margin-1
+  .gda-m-bottom-laptop-extra-4
+    margin-bottom: $margin-2
+  .gda-m-bottom-laptop-extra-5
+    margin-bottom: $margin-3
+
+// Laptop
+@include breakpoint(max, laptop)
+.gda-m-bottom-laptop-extra-3
+  margin-bottom: $margin-0-5
+.gda-m-bottom-laptop-extra-4
+  margin-bottom: $margin-1
+.gda-m-bottom-laptop-extra-5
+  margin-bottom: $margin-2
+
+// tablet
+@include breakpoint(max, tablet)
+.gda-m-bottom-laptop-extra-4
+  margin-bottom: $margin-0-5
+.gda-m-bottom-laptop-extra-5
+  margin-bottom: $margin-1
+
+
+// Mobile
+@include breakpoint(max,mobile)
+  .gda-m-bottom-mobile-default
+    margin-bottom: $margin-3
+  .gda-m-bottom-mobile-0
+    margin-bottom: 0 !important
+
+
 
 
 
@@ -546,3 +851,20 @@ a:not(.gda-navi-link):not(.gda-logo-link)
 
 .full-width
   width: 100% !important
+
+@include breakpoint(min,mobile)
+  .half-height
+    height: 40% !important
+
+  .half-width
+    width: 40% !important
+
+
+// ! Chip
+.wrap-chip
+  .chip
+    padding: 3px 10px
+    font-size: 1.8rem
+    border-radius: 50px
+    background-color: $yellow
+    color: $black

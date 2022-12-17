@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MissionComponent } from './_component/mission/mission.component';
 import { VisionComponent } from './_component/vision/vision.component';
 import { AboutComponent } from './_component/about/about.component';
-import { ProjekteComponent } from './_component/projekte/projekte.component';
 import { ChipsComponent } from './_ionen/chips/chips.component';
 
 // ! Material
@@ -32,7 +31,6 @@ import { ReferenzenComponent } from './_component/referenzen/referenzen.componen
     MissionComponent,
     VisionComponent,
     AboutComponent,
-    ProjekteComponent,
     ChipsComponent,
     ContactComponent,
     SidenavComponent,

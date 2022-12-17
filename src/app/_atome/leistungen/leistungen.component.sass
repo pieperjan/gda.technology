@@ -1,0 +1,80 @@
+// ! Custom Styling Navigation/AppComponent
+@import ../../../assets/sass/_var
+@import ../../../assets/sass/_mixins
+
+
+.leistungen
+  background: $bg-light-blue
+  border-radius: 64px
+  h2
+    margin-top: 70px
+    margin-bottom: 100px
+
+  .wrap-leistungen
+    width: 31%
+    @include breakpoint(max, laptop)
+      width: 45%
+    @include breakpoint(max, tablet)
+      width: 100%
+    @include transition(all)
+    &:hover,
+    &:focus,
+    &:focus-within
+      transform: scale(1.05)
+
+    h4
+      //height: 85px
+    &.webdesign
+      .cta-learnmore
+        .icon
+          background-color: $blue
+
+      .chip
+        background-color: $blue
+        color: $white
+
+    &.seo
+      .cta-learnmore
+        .icon
+          background-color: $yellow
+          svg
+            path
+              fill: $black
+
+      .chip
+        background-color: $yellow
+        color: $black
+
+    &.socialmedia
+      .cta-learnmore
+        .icon
+          background-color: $green
+      .chip
+        background-color: $green
+        color: $white
+
+    &.addon
+      .cta-learnmore
+        .icon
+          background-color: $black
+      .chip
+        background-color: $black
+        color: $white
+
+    .cta-learnmore
+      color: $black
+
+      .text
+        max-width: 80%
+        @include breakpoint(max, laptop-extra)
+          max-width: 70%
+        strong
+          font-size: 2.1rem
+
+        span
+          font-size: 1.4rem
+
+      .icon
+        padding: 20px
+        background-color: $blue
+        border-radius: 50%

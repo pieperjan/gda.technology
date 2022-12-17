@@ -39,9 +39,23 @@
 // ! Start
 #start
   h1
+    max-width: 85%
     .heart
       svg
-        height: 115px
+        margin-bottom: -19px
+        height: 70px
+  p
+    column-count: 2
+    column-gap: 4rem
+    @include breakpoint(max, tablet)
+      column-count: 1
+
+
+
+// ! Leistungen
+#leistungen
+  .gda-col
+    padding-top: 0 !important
 
 // ! Services
 #services
@@ -81,6 +95,12 @@
       width: 100%
 
 // ! Facts About
+#facts
+  .gda-col
+    .gda-bg-light
+      background: $bg-light-blue
+      border-radius: 64px
+
 #factsabout
 
 .gda-facts-about
@@ -95,3 +115,20 @@
   @include breakpoint(max, mobile)
     font:
       size: 2.1rem
+
+// ! button-main
+.button-main,
+.button-outline
+  width: fit-content
+  padding: 10px 20px
+  border-radius: 50px
+
+.button-main
+  background-color: $blue
+  color: $white
+  svg
+    path
+      fill: $white
+
+.button-outline
+  border: 1px solid $blue
